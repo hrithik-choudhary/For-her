@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You</title>
+  <link rel="stylesheet" href="style.css" />
+ <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&family=Patrick+Hand&display=swap" rel="stylesheet" />
+
+</head>
+<body class="thankyou-page">
+  <audio autoplay loop id="bg-music">
+    <source src="new-toys-happy-advertising-thanksgiving-kids-music-256424.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <div id="background-effects"></div>
+
+  <div class="thankyou-container">
+    <h1 class="glow">Thank You ❤️</h1>
+    <p class="thank-text fade-in">
+      Thank you for being the calm in my chaos, the light in my lows, and the one who made it all a little easier. 🌸
+    </p>
+    <p class="thank-text fade-in" style="animation-delay: 0.5s">
+      You stood beside me when I felt alone, and your words lifted me when I was low.
+    </p>
+    <p class="thank-text fade-in" style="animation-delay: 1s">
+      I can’t express how deeply grateful I am to have you in my life. 💫
+    </p>
+    <p class="thank-text fade-in" style="animation-delay: 1.5s">
+      You’re not just a part of my story — you’re the best chapter. Thank you, from the bottom of my heart.
+    </p>
+    <button onclick="goBackToStart()">💌 Back to Start</button>
+  </div>
+
+  <script>
+    function goBackToStart() {
+      window.location.href = "index.html";
+    }
+
+    const bg = document.getElementById("background-effects");
+
+    function createFloatingElement() {
+      const el = document.createElement("div");
+      const size = Math.random() * 30 + 10;
+      const type = Math.random() > 0.5 ? "❤️" : "✨";
+      el.textContent = type;
+      el.style.position = "absolute";
+      el.style.fontSize = `${size}px`;
+      el.style.left = `${Math.random() * 100}%`;
+      el.style.top = "100%";
+      el.style.opacity = "0.7";
+      el.style.animation = `floatUp ${4 + Math.random() * 4}s linear forwards`;
+      bg.appendChild(el);
+      setTimeout(() => el.remove(), 8000);
+    }
+
+    setInterval(createFloatingElement, 300);
+
+    const style = document.createElement("style");
+    style.innerHTML = `
+      @keyframes floatUp {
+        0% { transform: translateY(0); opacity: 0.7; }
+        100% { transform: translateY(-120vh); opacity: 0; }
+      }`;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>

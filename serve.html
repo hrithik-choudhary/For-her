@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Serving Cake</title>
+  <link rel="stylesheet" href="serve.css" />
+</head>
+<body class="serve-page">
+  <audio id="bg-music" src="romantic-wedding-background-music-345462.mp3" autoplay loop></audio>
+
+  <div class="container">
+    <h1>This is for you ❤️</h1>
+    <img src="image.png" alt="Girl serving cake" class="serve-image" />
+    <p>You deserve all the sweetness in the world 💖</p>
+    <button onclick="goToNext()">Someting more for you </button>
+  </div>
+
+  <script>
+    function goToNext() {
+      window.location.href = "wish.html";
+    }
+
+    function spawnFloatingEmoji() {
+      const el = document.createElement("div");
+      el.className = "floater";
+      el.textContent = Math.random() > 0.5 ? "❤️" : "✨";
+      el.style.left = `${Math.random() * 100}%`;
+      el.style.bottom = "-30px";
+      el.style.fontSize = `${Math.random() * 20 + 20}px`;
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 7000);
+    }
+
+    setInterval(spawnFloatingEmoji, 300);
+  </script>
+</body>
+</html>

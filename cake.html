@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cake Cutting</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="cake">
+    <div id="background-floaters"></div>
+
+    <audio id="cut-sound" src="cut.mp3" preload="auto"></audio>
+
+    <div class="container">
+      <div id="party-background"></div>
+
+      <h1>Happy Birthday! 🎂</h1>
+      <p id="cut-text">Let’s cut the cake together 🍰</p>
+
+      <div class="cake-wrapper">
+        <div class="cake-body"></div>
+        <div class="cake-top"></div>
+        <div class="candle" onclick="blowCandle()"></div>
+        <div class="flame" id="flame"></div>
+        <div class="cake-slice" id="slice"></div>
+      </div>
+
+      <button id="cutBtn" onclick="cutCake()">Cut the Cake</button>
+      <button id="serveBtn" class="hidden" onclick="location.href='serve.html'">Celibrate</button>
+    </div>
+<audio id="bg-music" src="happy-birthday-254480.mp3" autoplay loop preload="auto"></audio>
+
+    <script src="cake.js"></script>
+  </body>
+</html>

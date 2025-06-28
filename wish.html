@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Birthday Wish</title>
+  <link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
+
+</head>
+<body class="wish-page">
+  <div class="wish-container">
+    <h1>Happy Birthday, Sahiba! 🎉</h1>
+    <p class="wish-text">
+  Happy Birthday, my sunshine! ☀️ On this magical day, I wish you a life full of laughter, love, and wild adventures. May your heart be light, your smile unstoppable, and your dreams always within reach.
+</p>
+<p class="wish-text">
+  You're a rare kind of beautiful — the kind that lights up every room. As you step into this new chapter, may you dance through life with joy, courage, and grace. 💃💖
+</p>
+<p class="wish-text">
+  Here's to late-night giggles, big dreams, unexpected blessings, and a future as dazzling as your soul. Keep glowing — the world needs your light. ✨🌸🎉
+</p>
+
+
+    <button onclick="goToNext()">Msg for you</button>
+  </div>
+
+  <div id="floating-emojis"></div>
+
+  <audio autoplay loop>
+    <source src="Sahiba (PenduJatt.Com.Se).mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+    function goToNext() {
+      window.location.href = "final.html"; // or any next page you plan
+    }
+
+    const container = document.getElementById("floating-emojis");
+    function createEmoji() {
+      const el = document.createElement("div");
+      el.textContent = Math.random() > 0.5 ? "🎈" : "✨";
+      el.style.position = "absolute";
+      el.style.fontSize = `${Math.random() * 20 + 20}px`;
+      el.style.left = `${Math.random() * 100}%`;
+      el.style.top = "100%";
+      el.style.opacity = "0.7";
+      el.style.animation = `floatUp ${5 + Math.random() * 5}s linear forwards`;
+      container.appendChild(el);
+      setTimeout(() => el.remove(), 10000);
+    }
+    setInterval(createEmoji, 300);
+
+    const style = document.createElement("style");
+    style.innerHTML = `
+      @keyframes floatUp {
+        0% { transform: translateY(0); opacity: 0.7; }
+        100% { transform: translateY(-120vh); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
